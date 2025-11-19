@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: #2c5aa0; color: white; padding: 20px; text-align: center; border-radius: 10px 10px 0 0; }
+        .content { padding: 30px; background: #f9f9f9; border-radius: 0 0 10px 10px; }
+        .account-info { background: white; padding: 20px; border-radius: 5px; margin: 20px 0; border: 2px solid #e0e0e0; }
+        .feature { background: #f0f8ff; padding: 15px; border-radius: 5px; margin: 10px 0; border-left: 4px solid #2c5aa0; }
+        .footer { text-align: center; padding: 20px; font-size: 12px; color: #666; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to First International Financial Services Bank! 🎉</h1>
+            <p>Your Financial Journey Starts Here</p>
+        </div>
+        <div class="content">
+            <p>Dear <strong><%= firstName %> <%= lastName %></strong>,</p>
+            
+            <p>Welcome to First International Financial Services Bank! We're thrilled to have you as our valued customer. Your account has been successfully activated and is ready to use.</p>
+            
+            <div class="account-info">
+                <h3>Your Account Information:</h3>
+                <p><strong>Account Number:</strong> <%= accountNumber %></p>
+                <p><strong>Routing Number:</strong> <%= routingNumber %></p>
+                <p><strong>Account Type:</strong> <%= accountType %></p>
+                <p><strong>Opening Deposit:</strong> $<%= openingDeposit.toLocaleString() %></p>
+                <p><strong>Current Balance:</strong> $<%= balance.checking.toLocaleString() %> (Checking)</p>
+                <% if (balance.savings > 0) { %>
+                    <p><strong>Savings Balance:</strong> $<%= balance.savings.toLocaleString() %></p>
+                <% } %>
+                <p><strong>Activation Date:</strong> <%= activatedAt %></p>
+            </div>
+            
+            <h3>What You Can Do Now:</h3>
+            <div class="feature">
+                <strong>💰 Manage Your Money</strong>
+                <p>View balances, transfer funds, and track your spending</p>
+            </div>
+            <div class="feature">
+                <strong>💳 Make Payments</strong>
+                <p>Pay bills, send money to friends and family</p>
+            </div>
+            <div class="feature">
+                <strong>📱 Mobile Banking</strong>
+                <p>Access your account anytime, anywhere</p>
+            </div>
+            <div class="feature">
+                <strong>🛡️ Security Features</strong>
+                <p>Two-factor authentication and advanced security monitoring</p>
+            </div>
+            
+            <p><strong>Need Help?</strong> Our customer support team is available 24/7 to assist you with any questions.</p>
+            
+            <p>Thank you for trusting First International Financial Services Bank with your financial needs!</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 First International Financial Services Bank. All rights reserved.</p>
+            <p>This is an automated welcome message.</p>
+        </div>
+    </div>
+</body>
+</html>
