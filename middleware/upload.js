@@ -2,7 +2,11 @@ const multer = require("multer");
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const cloudinary = require("./cloudinary");
 
-// Configure Cloudinary storage - FIXED public_id function
+// Check if CloudinaryStorage is available
+if (!CloudinaryStorage) {
+  throw new Error("CloudinaryStorage is not available. Check your multer-storage-cloudinary installation.");
+}
+
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
@@ -128,9 +132,9 @@ const processUploadedFiles = (req, res, next) => {
   next();
 };
 
-// Log upload attempt - FIXED to handle missing body
+// Log upload attempt
 const logUploadAttempt = (req, res, next) => {
-
+  console.log('📁 Upload attempt received');
   next();
 };
 
