@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: #28a745; color: white; padding: 20px; text-align: center; }
+        .content { padding: 20px; background: #f9f9f9; }
+        .status { background: white; padding: 15px; border-radius: 5px; border-left: 4px solid #28a745; }
+        .next-steps { background: #d1ecf1; padding: 15px; border-radius: 5px; margin: 15px 0; }
+        .footer { text-align: center; padding: 20px; font-size: 12px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Payment Verified! 🎉</h1>
+        </div>
+        
+        <div class="content">
+            <h2>Hello <%= firstName %>,</h2>
+            <p>Great news! Your upfront payment has been verified successfully.</p>
+            
+            <div class="status">
+                <h3>Loan Application Status</h3>
+                <p><strong>Application ID:</strong> <%= loanId %></p>
+                <p><strong>Status:</strong> <span style="color: #28a745; font-weight: bold;">Under Review</span></p>
+                <p><strong>Payment Amount:</strong> ₦<%= paymentAmount.toLocaleString() %></p>
+                <p><strong>Payment Reference:</strong> <%= paymentReference %></p>
+                <p><strong>Verification Date:</strong> <%= verificationDate %></p>
+            </div>
+
+            <div class="next-steps">
+                <h4>📋 What Happens Next?</h4>
+                <ul>
+                    <li>Your loan application is now under review</li>
+                    <li>We will verify your documents and information</li>
+                    <li>Approval decision within 2-3 business days</li>
+                    <li>You will be notified via email and SMS</li>
+                </ul>
+            </div>
+
+            <p>You can check your application status anytime in your dashboard.</p>
+            
+            <p>Best regards,<br>First International Financial Services Loan Team</p>
+        </div>
+        
+        <div class="footer">
+            <p>This is an automated message. Please do not reply to this email.</p>
+            <p>&copy; 2024 First International Financial Services. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: #ff6b35; color: white; padding: 20px; text-align: center; border-radius: 10px 10px 0 0; }
+        .content { padding: 30px; background: #f9f9f9; border-radius: 0 0 10px 10px; }
+        .payment-box { background: white; padding: 20px; border-radius: 5px; margin: 20px 0; border: 2px solid #ff6b35; }
+        .instructions { background: #fff3e0; padding: 15px; border-radius: 5px; margin: 15px 0; }
+        .footer { text-align: center; padding: 20px; font-size: 12px; color: #666; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>First International Financial Services</h1>
+            <h2>Payment Instructions</h2>
+        </div>
+        <div class="content">
+            <p>Hello <strong><%= firstName %></strong>,</p>
+            <p>Thank you for verifying your email! To activate your First International Financial Services Bank account, please complete the payment using the instructions below.</p>
+            
+            <div class="payment-box">
+                <h3>Payment Details:</h3>
+                <p><strong>Amount:</strong> <%= currency %> <%= amount.toLocaleString() %></p>
+                <p><strong>Payment Reference:</strong> <code><%= paymentReference %></code></p>
+                <p><strong>Your Account:</strong> <%= accountNumber %></p>
+            </div>
+            
+            <div class="instructions">
+                <h3>How to Pay:</h3>
+                <p><strong>Provider:</strong> <%= paymentAccount.provider %></p>
+                <p><strong>Account Number:</strong> <%= paymentAccount.accountNumber %></p>
+                <p><strong>Account Name:</strong> <%= paymentAccount.accountName %></p>
+                <p><strong>Bank:</strong> <%= paymentAccount.bankName %></p>
+                
+                <h4>Instructions:</h4>
+                <ol>
+                    <% paymentAccount.instructions.forEach(instruction => { %>
+                        <li><%= instruction %></li>
+                    <% }); %>
+                </ol>
+            </div>
+            
+            <p><strong>Important:</strong> You MUST include the payment reference "<code><%= paymentReference %></code>" in the transaction description.</p>
+            
+            <p>After making the payment, return to your account and verify the payment using the transaction ID.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 First International Financial Services Bank. All rights reserved.</p>
+            <p>This is an automated payment instruction message.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: #d9534f; color: white; padding: 20px; text-align: center; border-radius: 10px 10px 0 0; }
+        .content { padding: 30px; background: #f9f9f9; border-radius: 0 0 10px 10px; }
+        .verification-code { 
+            font-size: 32px; 
+            font-weight: bold; 
+            text-align: center; 
+            color: #d9534f;
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            border: 2px dashed #d9534f;
+        }
+        .security-alert { background: #ffe6e6; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #d9534f; }
+        .footer { text-align: center; padding: 20px; font-size: 12px; color: #666; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>First International Financial Services Security</h1>
+            <h2>Login Verification Code</h2>
+        </div>
+        <div class="content">
+            <p>Hello <strong><%= firstName %></strong>,</p>
+            <p>We noticed a login attempt to your First International Financial Services account. For your security, please use the verification code below to complete your login:</p>
+            
+            <div class="verification-code">
+                <%= verificationCode %>
+            </div>
+            
+            <p>This code will expire in <strong><%= expiresIn %></strong>.</p>
+            
+            <div class="security-alert">
+                <p><strong>Security Alert:</strong></p>
+                <p>Login Time: <%= loginTime %></p>
+                <p>If you didn't attempt to login to your account, please:</p>
+                <ul>
+                    <li>Change your password immediately</li>
+                    <li>Contact our support team</li>
+                    <li>Review your account activity</li>
+                </ul>
+            </div>
+            
+            <p>This verification code ensures that only you can access your account, even if someone else has your password.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 First International Financial Services Bank. All rights reserved.</p>
+            <p>This is an automated security message.</p>
+        </div>
+    </div>
+</body>
+</html>

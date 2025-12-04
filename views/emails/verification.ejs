@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: #2c5aa0; color: white; padding: 20px; text-align: center; border-radius: 10px 10px 0 0; }
+        .content { padding: 30px; background: #f9f9f9; border-radius: 0 0 10px 10px; }
+        .verification-code { 
+            font-size: 32px; 
+            font-weight: bold; 
+            text-align: center; 
+            color: #2c5aa0;
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            border: 2px dashed #2c5aa0;
+        }
+        .footer { text-align: center; padding: 20px; font-size: 12px; color: #666; margin-top: 20px; }
+        .info-box { background: white; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #2c5aa0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>First International Financial Services</h1>
+            <h2>Email Verification Required</h2>
+        </div>
+        <div class="content">
+            <p>Hello <strong><%= firstName %></strong>,</p>
+            <p>Thank you for registering with First International Financial Services Bank! To complete your account setup, please verify your email address using the code below:</p>
+            
+            <div class="verification-code">
+                <%= verificationCode %>
+            </div>
+            
+            <div class="info-box">
+                <p><strong>Account Number:</strong> <%= accountNumber %></p>
+                <p><strong>Code Expires:</strong> <%= expiresIn %></p>
+            </div>
+            
+            <p>Enter this code on the verification page to confirm your email address.</p>
+            
+            <p><strong>Important:</strong> If you didn't create an account with First International Financial Services Bank, please ignore this email.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2012 First International Financial Services Bank. All rights reserved.</p>
+            <p>This is an automated message, please do not reply to this email.</p>
+        </div>
+    </div>
+</body>
+</html>

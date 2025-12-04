@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: #17a2b8; color: white; padding: 20px; text-align: center; border-radius: 10px 10px 0 0; }
+        .content { padding: 20px; background: #f9f9f9; }
+        .disbursement { background: white; padding: 20px; border-radius: 5px; border-left: 4px solid #17a2b8; margin: 15px 0; }
+        .repayment { background: #d1ecf1; padding: 20px; border-radius: 5px; margin: 15px 0; }
+        .footer { text-align: center; padding: 20px; font-size: 12px; color: #666; }
+        .amount { font-size: 24px; font-weight: bold; color: #17a2b8; }
+        .button { display: inline-block; padding: 12px 24px; background: #17a2b8; color: white; text-decoration: none; border-radius: 5px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 Loan Funds Disbursed!</h1>
+        </div>
+        
+        <div class="content">
+            <h2>Hello <%= firstName %>,</h2>
+            <p>Great news! Your loan funds have been successfully disbursed to your account.</p>
+            
+            <div class="disbursement">
+                <h3>Disbursement Details</h3>
+                <p><strong>Amount Disbursed:</strong> <span class="amount">₦<%= disbursedAmount.toLocaleString() %></span></p>
+                <p><strong>Disbursement Date:</strong> <%= disbursementDate %></p>
+                <p><strong>Disbursement Method:</strong> <%= disbursementMethod %></p>
+                <p><strong>Account Credited:</strong> <%= accountNumber %></p>
+                <p><strong>Transaction Reference:</strong> <%= transactionReference %></p>
+            </div>
+
+            <div class="repayment">
+                <h4>📅 Repayment Information</h4>
+                <p><strong>Monthly Payment:</strong> ₦<%= monthlyPayment.toLocaleString() %></p>
+                <p><strong>First Payment Due:</strong> <%= firstPaymentDate %></p>
+                <p><strong>Payment Frequency:</strong> Monthly</p>
+                <p><strong>Payment Method:</strong> Automatic deduction from your account</p>
+            </div>
+
+            <p><strong>Important Notes:</strong></p>
+            <ul>
+                <li>Ensure sufficient funds in your account on payment due dates</li>
+                <li>You can make early payments without penalty</li>
+                <li>Contact us if you face any repayment difficulties</li>
+                <li>Keep track of your repayment schedule in your dashboard</li>
+            </ul>
+
+            <a href="<%= dashboardUrl %>" class="button">View Repayment Schedule</a>
+            
+            <p>If you have any questions about your loan or repayment, please contact our support team.</p>
+            
+            <p>Best regards,<br>First International Financial Services Loan Team</p>
+        </div>
+        
+        <div class="footer">
+            <p>This is an automated message. Please do not reply to this email.</p>
+            <p>&copy; 2012 First International Financial Services. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
